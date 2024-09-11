@@ -6,7 +6,7 @@ class Horse:
         self.x_distance += dx
 
     def voice(self):
-        super().voice()
+        print(super().sound)
 
 class Eagle:
     y_distance = 0
@@ -15,15 +15,12 @@ class Eagle:
     def fly(self, dy):
         self.y_distance += dy
 
-    def voice(self):
-       print(self.sound)
-
 
 class Pegasus(Horse,Eagle):
 
     def move(self, dx, dy):
-        super().run(dx)
-        super().fly(dy)
+        self.run(dx)
+        self.fly(dy)
 
     def get_pos(self):
         return (self.x_distance, self.y_distance)
@@ -31,6 +28,7 @@ class Pegasus(Horse,Eagle):
 
     def voice(self):
         super().voice()
+
 
 p1 = Pegasus()
 
